@@ -6,8 +6,13 @@ On UNIX systems:
 * Make sure you have CMake (3.3 or higher) installed
 * Install GDML and Xerces-C (see also the GEANT4 installation manual)
 * CLHEP is optional, GEANT4 has its own version included
-* Install GEANT4.10.02 patch 02 with GDML and Xerces-C enabled, a detailed description of this process can be found in the GEANT4 installation manual.
+* Install GEANT4.10.02 patch 03 with GDML and Xerces-C enabled, a detailed description of this process can be found in the GEANT4 installation manual.
 * The GEANT4 DATA is also necessary, so be sure to install this during the GEANT4 installation.
+
+* The cmake command to build the Geant4 library should look something like this:
+cmake -DCMAKE_INSTALL_PREFIX=/scratch/geant4.10.02.p03-install -DGEANT4_USE_GDML=ON -DGEANT4_INSTALL_DATA=ON -DGEANT4_USE_OPENGL_X11=ON -DXERCESC_INCLUDE_DIR=/usr/include/xercesc -DXERCESC_LIBRARY=/usr/lib/x86_64-linux-gnu/libxerces-c.so /scratch/geant4.10.02.p03
+
+which in my case was issued while in the /scratch/geant4.10.02.p03-build  subdirectory.
 
 Before installation, make sure to run the `geant4.sh` script to setup the right environment variables (this script is placed in the /bin/ in the install directory)
 
